@@ -1,21 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Hello World</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #f9fafb; color: #111827; }
-    .wrap { min-height: 100%; display: grid; place-items: center; }
-    .card { padding: 2rem 2.5rem; background: white; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
-    h1 { margin: 0; font-size: 2rem; }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="card">
-      <h1>Hello World!</h1>
-    </div>
-  </div>
-</body>
-</html>
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+if __name__ == "__main__":
+    # Run the Flask development server
+    app.run(host="0.0.0.0", port=5000, debug=True)
